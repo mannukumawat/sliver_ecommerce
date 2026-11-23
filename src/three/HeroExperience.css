@@ -1,0 +1,11 @@
+.stage { position: relative; width: 100%; height: 100%; min-height: 360px; overflow: hidden; background: radial-gradient(ellipse at 50% 55%, #14438c 0%, #0b2b5e 40%, #050f24 100%); contain: layout paint; }
+.stage__fallback, .stage__canvas { position: absolute; inset: 0; transition: opacity 1s var(--ease); }
+.stage__fallback svg { width: 100%; height: 100%; }
+.stage__fallback.is-hidden { opacity: 0; pointer-events: none; }
+.stage__canvas { opacity: 0; }
+.stage__canvas.is-ready { opacity: 1; }
+.stage__canvas canvas { display: block; width: 100% !important; height: 100% !important; touch-action: pan-y; }
+.stage__vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, rgba(3, 9, 22, .55) 100%); }
+.stage__loader { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: #cfe0ff; font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; animation: pulse 1.8s ease-in-out infinite; white-space: nowrap; }
+@keyframes pulse { 50% { opacity: .45; } }
+.stage__note { position: absolute; left: 16px; right: 16px; bottom: 14px; text-align: center; color: #9fb6dc; font-size: 12px; }

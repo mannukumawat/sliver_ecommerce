@@ -1,0 +1,7 @@
+.price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font-weight: 500; }
+.price__now { color: var(--navy); font-size: 15px; }
+.price__mrp { color: var(--text-soft); font-size: 13px; font-weight: 400; }
+.price__off { color: var(--royal); font-size: 12px; letter-spacing: .04em; }
+.price--lg .price__now { font-size: 1.6rem; }
+.price--lg .price__mrp { font-size: 1rem; }
+.price--lg .price__off { font-size: 13px; }

@@ -1,0 +1,4 @@
+.qv__body { padding: clamp(16px, 3vw, 40px); padding-top: 52px; }
+@media (min-width: 900px) { .qv__body { padding-top: clamp(24px, 3vw, 40px); } }
+.qv .pdetail__main { max-height: 62dvh; }
+@media (max-width: 899px) { .qv .pdetail__main { aspect-ratio: 1 / 1; } }

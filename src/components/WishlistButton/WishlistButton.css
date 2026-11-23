@@ -1,0 +1,8 @@
+.wish { color: var(--navy); display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: color .25s, background .25s, border-color .25s; }
+.wish--icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.88); }
+.wish--icon:hover { background: #fff; }
+.wish--text { min-height: 48px; padding: 0 22px; border: 1px solid var(--line); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; }
+.wish--text:hover { border-color: var(--navy); }
+.wish.is-on { color: #c2335f; }
+.wish.is-on svg { animation: pop .38s var(--ease); }
+@keyframes pop { 0% { transform: scale(.7); } 60% { transform: scale(1.25); } 100% { transform: scale(1); } }

@@ -1,0 +1,26 @@
+.pcard { min-width: 0; }
+.pcard__media { position: relative; aspect-ratio: 4 / 5; background: var(--ice); overflow: hidden; }
+.pcard__link { position: absolute; inset: 0; display: block; }
+.pcard__media .pcard__img { position: absolute; inset: 0; transition: opacity .5s var(--ease), transform .9s var(--ease); }
+.pcard__img--b { opacity: 0; transform: scale(1.05); }
+.pcard__media:hover .pcard__img--a { transform: scale(1.04); }
+@media (hover: hover) {
+  .pcard__media:hover .pcard__img--b { opacity: 1; transform: scale(1); }
+  .pcard__media:hover .pcard__img--a { opacity: 0; }
+}
+.pcard__badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; pointer-events: none; }
+.badge { background: #fff; color: var(--navy); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; padding: 5px 10px; }
+.badge--new { background: var(--navy); color: #fff; }
+.pcard__wish { position: absolute; top: 8px; right: 8px; }
+.pcard__quick {
+  position: absolute; left: 0; right: 0; bottom: 0; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: rgba(255,255,255,.94); color: var(--navy); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+  transform: translateY(101%); transition: transform .35s var(--ease);
+}
+.pcard__media:hover .pcard__quick, .pcard__quick:focus-visible, .pcard__media:focus-within .pcard__quick { transform: none; }
+@media (hover: none) {
+  .pcard__quick { transform: none; left: auto; right: 8px; bottom: 8px; width: 40px; min-height: 40px; border-radius: 50%; font-size: 0; gap: 0; }
+}
+.pcard__info { padding: 14px 2px 0; display: grid; gap: 4px; }
+.pcard__name { font-family: var(--font-body); font-size: 14.5px; font-weight: 500; color: var(--text); letter-spacing: 0; }
+.pcard__name a:hover { color: var(--royal); }

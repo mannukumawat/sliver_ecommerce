@@ -1,0 +1,4 @@
+.logo { display: inline-flex; align-items: center; gap: 9px; color: var(--navy); }
+.logo__word { font-family: var(--font-head); font-size: 1.55rem; letter-spacing: 0.26em; font-weight: 500; line-height: 1; }
+.logo--light { color: #fff; }
+@media (max-width: 899px) { .logo__word { font-size: 1.3rem; } }

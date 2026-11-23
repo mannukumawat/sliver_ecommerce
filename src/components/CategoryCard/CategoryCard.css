@@ -1,0 +1,9 @@
+.ccard { display: block; }
+.ccard__media { aspect-ratio: 4 / 5; overflow: hidden; background: var(--ice); }
+.ccard__img { transition: transform 1s var(--ease); }
+.ccard:hover .ccard__img { transform: scale(1.06); }
+.ccard__label { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 2px 0; color: var(--navy); border-bottom: 1px solid transparent; }
+.ccard__label h3 { font-size: 1.3rem; }
+.ccard__label p { font-size: 13px; color: var(--text-soft); margin-top: 2px; }
+.ccard__label svg { flex-shrink: 0; transition: transform .3s var(--ease); }
+.ccard:hover .ccard__label svg { transform: translate(3px, -3px); }

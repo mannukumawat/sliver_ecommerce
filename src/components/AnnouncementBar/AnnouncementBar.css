@@ -1,0 +1,4 @@
+.announce { position: relative; background: var(--navy); color: #fff; text-align: center; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding: 10px 52px; }
+.announce button { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; display: grid; place-items: center; color: #fff; opacity: .8; }
+.announce button:hover { opacity: 1; }
+@media (max-width: 480px) { .announce { font-size: 10.5px; letter-spacing: .08em; } }

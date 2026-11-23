@@ -1,0 +1,37 @@
+/* First chapter: editorial copy and a dedicated jewellery studio. */
+.sx__panel--signature { max-width: 47%; gap: 24px; }
+.sx__panel--signature .eyebrow { font-size: 10px; letter-spacing: .23em; color: #c4b89f; display: flex; align-items: center; gap: 14px; }
+.sx__panel--signature .eyebrow > span { width: 25px; height: 1px; background: #998c73; }
+.sx__panel--signature .sx__title { font-size: clamp(3.2rem, 6.2vw, 6.2rem); line-height: 1.02; letter-spacing: -.045em; }
+.sx__panel--signature .sx__title em { color: #d6c4a6; }
+.sx__panel--signature .sx__copy { font-size: 14px; line-height: 1.85; color: #aab6c4; }
+.sx__panel--signature .sx__cta { align-items: center; gap: 26px; margin-top: 4px; }
+.sx__panel--signature .btn { background: #eee6d9; border-color: #eee6d9; color: #15212c; font-size: 11px; letter-spacing: .13em; }
+.sx__panel--signature .btn:hover { background: #fff9ef; transform: translateY(-2px); }
+.sx__discover { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; color: #e0e5eb; font-size: 12px; border-bottom: 1px solid #66707b; }
+.sx__discover span { font-size: 20px; transition: transform .25s; }
+.sx__discover:hover span { transform: translate(3px, -3px); }
+.sx__discover:focus-visible { outline: 2px solid #d6c4a6; outline-offset: 5px; }
+.sx__signature-note { color: #8c99a7; font-size: 9px; letter-spacing: .19em; display: flex; gap: 16px; align-items: center; margin-top: 14px; }
+.sx__signature-note span { color: #c4b89f; }
+.sx__giant--hero { opacity: .25; font-size: clamp(5rem, 19vw, 23rem) !important; }
+@media (max-width: 899px) {
+  .sx__panel--signature { max-width: none; bottom: 48px; gap: 12px; }
+  .sx__panel--signature .sx__title { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.04; }
+  .sx__panel--signature .sx__title .ln { display: inline; margin-right: .22em; }
+  .sx__panel--signature .sx__title .ln:last-child { display: block; }
+  .sx__panel--signature .sx__copy { font-size: 12px; line-height: 1.6; }
+  .sx__panel--signature .sx__cta { gap: 16px; flex-wrap: wrap; }
+  .sx__panel--signature .sx__cta .btn { flex: 0 1 auto; padding: 14px 20px; min-height: 46px; }
+  .sx__signature-note { display: none; }
+  .sx__panel--signature .eyebrow { font-size: 8px; }
+}
+@media (max-height: 650px) and (min-width: 900px) {
+  .sx__panel--signature { gap: 12px; }
+  .sx__panel--signature .sx__title { font-size: clamp(2.5rem, 5vw, 4rem); }
+  .sx__signature-note { display: none; }
+}
+@media (max-height: 700px) and (max-width: 899px) {
+  .sx__panel--signature { bottom: 38px; gap: 8px; }
+  .sx__panel--signature .sx__copy { display: none; }
+}

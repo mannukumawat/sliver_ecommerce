@@ -1,0 +1,9 @@
+.simple { display: grid; gap: 16px; justify-items: center; text-align: center; padding-top: clamp(64px, 10vw, 140px); padding-bottom: clamp(64px, 10vw, 140px); }
+.simple h1 { font-size: var(--fs-h1); }
+.simple p { max-width: 56ch; color: var(--text-soft); }
+.simple .btn { margin-top: 12px; }
+.simple--left { justify-items: start; text-align: left; padding-top: 24px; }
+.wl-head { padding: 24px 0 8px; }
+.wl-head h1 { font-size: var(--fs-h1); }
+.wl-head p { color: var(--text-soft); margin-top: 8px; }
+.wl-body { padding: 32px 0 clamp(64px, 8vw, 112px); }
