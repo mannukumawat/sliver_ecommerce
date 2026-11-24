@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
+import { useSettings } from '../../context/SettingsContext'
 import './AnnouncementBar.css'
 
 export default function AnnouncementBar() {
+  const { settings } = useSettings()
   const [open, setOpen] = useState(() => {
     try { return sessionStorage.getItem('aurave.announce') !== 'x' } catch { return true }
   })
@@ -13,7 +15,7 @@ export default function AnnouncementBar() {
   }
   return (
     <div className="announce" role="region" aria-label="Announcement">
-      <p>Complimentary Shipping on Orders Above ₹1,999</p>
+      <p>{settings.announcement}</p>
       <button onClick={dismiss} aria-label="Dismiss announcement"><X size={16} /></button>
     </div>
   )

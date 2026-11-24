@@ -44,6 +44,9 @@ export default function Footer() {
         <nav aria-label="Help">
           <h2>Help</h2>
           <ul>
+            <li><Link to="/help">Help &amp; support</Link></li>
+            <li><Link to="/account/orders">Track your order</Link></li>
+            <li><Link to="/offers">Coupons &amp; offers</Link></li>
             <li><Link to="/policy/shipping">Shipping &amp; returns</Link></li>
             <li><Link to="/policy/privacy">Privacy policy</Link></li>
             <li><Link to="/policy/terms">Terms &amp; conditions</Link></li>

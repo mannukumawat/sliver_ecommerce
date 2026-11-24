@@ -1,0 +1,20 @@
+.auth { display: grid; gap: 16px; }
+.auth__tabs { display: flex; border-bottom: 1px solid var(--line); }
+.auth__tabs button { flex: 1; padding: 12px 8px; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; color: var(--text-soft); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.auth__tabs button.is-active { color: var(--navy); border-color: var(--navy); }
+.auth form { display: grid; gap: 14px; }
+.field { display: grid; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text); }
+.field input, .field select, .field textarea {
+  min-height: 48px; padding: 0 14px; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); font-weight: 400; width: 100%;
+}
+.field textarea { padding: 12px 14px; resize: vertical; min-height: 84px; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--navy); outline: 2px solid var(--royal); outline-offset: 2px; }
+.field input[aria-invalid='true'] { border-color: var(--danger); }
+.field__err { color: var(--danger); font-size: 13px; }
+.field__hint { color: var(--text-soft); font-size: 12.5px; font-weight: 400; }
+.auth__demo { font-size: 13px; color: var(--text-soft); background: var(--ice); padding: 12px 14px; border-radius: var(--radius); }
+.auth__demo button { color: var(--navy); text-decoration: underline; font-weight: 500; }
+.auth__demo code { font-size: 12.5px; }
+.auth__note { font-size: 12.5px; color: var(--text-soft); }
+.auth__ok { color: var(--navy); background: var(--ice); padding: 16px; border-radius: var(--radius); }

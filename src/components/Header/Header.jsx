@@ -8,6 +8,7 @@ import SearchDialog from './SearchDialog'
 import AccountDrawer from './AccountDrawer'
 import { useCart } from '../../context/CartContext'
 import { useWishlist } from '../../context/WishlistContext'
+import { useAuth } from '../../context/AuthContext'
 import { useUI } from '../../context/UIContext'
 import './Header.css'
 
@@ -19,6 +20,7 @@ export default function Header() {
   const [accountOpen, setAccountOpen] = useState(false)
   const { count } = useCart()
   const wish = useWishlist()
+  const { isLoggedIn } = useAuth()
   const { openCart } = useUI()
   const loc = useLocation()
 
@@ -60,7 +62,7 @@ export default function Header() {
           <Link to="/wishlist" className="hdr__icon hdr__wish" aria-label={`Wishlist, ${wish.count} saved`}>
             <Heart size={21} />{wish.count > 0 && <span className="hdr__count" aria-hidden="true">{wish.count}</span>}
           </Link>
-          <button className="hdr__icon hdr__acct" onClick={() => setAccountOpen(true)} aria-label="Account" aria-haspopup="dialog"><User size={21} /></button>
+          <button className={`hdr__icon hdr__acct ${isLoggedIn ? 'hdr__acct--in' : ''}`} onClick={() => setAccountOpen(true)} aria-label={isLoggedIn ? 'Account — signed in' : 'Account'} aria-haspopup="dialog"><User size={21} /></button>
           <button className="hdr__icon" onClick={openCart} aria-label={bagLabel} aria-haspopup="dialog">
             <ShoppingBag size={21} />{count > 0 && <span className="hdr__count" aria-hidden="true">{count}</span>}
           </button>

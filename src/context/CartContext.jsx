@@ -1,12 +1,13 @@
 import { createContext, useCallback, useContext, useMemo } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { products } from '../data/products'
+import { useProducts } from '../hooks/useProducts'
 
 const CartContext = createContext(null)
 const MAX_QTY = 10
 
 export function CartProvider({ children }) {
   const [lines, setLines] = useLocalStorage('aurave.cart', [])
+  const { products } = useProducts()
 
   const add = useCallback((id, qty = 1) => {
     setLines((cur) => {
@@ -33,7 +34,7 @@ export function CartProvider({ children }) {
       subtotal: items.reduce((n, l) => n + l.qty * l.product.price, 0),
       add, setQty, remove, clear, MAX_QTY,
     }
-  }, [lines, add, setQty, remove, clear])
+  }, [lines, products, add, setQty, remove, clear])
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }

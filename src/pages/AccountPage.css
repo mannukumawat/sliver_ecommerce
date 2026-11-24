@@ -1,0 +1,15 @@
+.account-page { padding-bottom: clamp(64px, 8vw, 112px); }
+.account__login { max-width: 480px; padding-top: 16px; }
+.account__quick { display: grid; gap: 14px; padding-top: 24px; }
+@media (min-width: 640px) { .account__quick { grid-template-columns: repeat(3, 1fr); } }
+.account__tile { display: grid; gap: 4px; align-content: start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; color: var(--navy); text-align: left; }
+.account__tile:hover { border-color: var(--royal); background: var(--ice); }
+.account__tile span { color: var(--text-soft); font-size: 13px; }
+.account__grid { display: grid; gap: 24px; padding-top: 24px; align-items: start; }
+@media (min-width: 1000px) { .account__grid { grid-template-columns: 1fr 1.2fr; } }
+.account__form { display: grid; gap: 14px; }
+.account__addrs { display: grid; gap: 12px; }
+.account__addr { display: flex; justify-content: space-between; gap: 16px; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; font-size: 14px; line-height: 1.55; }
+.account__addr-actions { display: flex; gap: 4px; align-items: flex-start; flex-shrink: 0; }
+.account__addr-actions button { padding: 8px; color: var(--navy); font-size: 13px; text-decoration: underline; }
+.account__addr-actions button:hover { color: var(--royal); }

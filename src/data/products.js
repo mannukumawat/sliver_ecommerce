@@ -36,6 +36,37 @@ export const products = [
   P(24, 'pearl-gift-set', 'Pearl Gift Set', 'sets', 3999, 4799, 'Classic', 'Pearl', { bestseller: true, desc: 'A graduated pearl strand with a stone-set clasp, in a gift box.', size: 'Strand 17 in' }),
 ]
 
-export const getProduct = (slug) => products.find((p) => p.slug === slug)
-export const related = (p, n = 4) =>
-  [...products.filter((x) => x.category === p.category && x.id !== p.id), ...products.filter((x) => x.category !== p.category && x.id !== p.id)].slice(0, n)
+export const getProduct = (slug) => allProducts().find((p) => p.slug === slug)
+export const related = (p, n = 4) => {
+  const all = allProducts()
+  return [...all.filter((x) => x.category === p.category && x.id !== p.id), ...all.filter((x) => x.category !== p.category && x.id !== p.id)].slice(0, n)
+}
+
+// Admin-added products live in localStorage (demo, no server) and merge with the
+// built-in catalogue everywhere the storefront reads products.
+export const ADMIN_PRODUCTS_KEY = 'aurave-admin-products-v1'
+
+export function readAdminProducts() {
+  try {
+    const raw = localStorage.getItem(ADMIN_PRODUCTS_KEY)
+    const list = raw ? JSON.parse(raw) : []
+    return Array.isArray(list) ? list : []
+  } catch { return [] }
+}
+
+export function allProducts() {
+  return [...products, ...readAdminProducts()]
+}
+
+export function saveAdminProduct(product) {
+  const list = readAdminProducts()
+  const next = [...list, product]
+  try { localStorage.setItem(ADMIN_PRODUCTS_KEY, JSON.stringify(next)) } catch { /* ignore */ }
+  try { window.dispatchEvent(new Event('aurave:products-changed')) } catch { /* ignore */ }
+  return product
+}
+
+export function removeAdminProduct(id) {
+  try { localStorage.setItem(ADMIN_PRODUCTS_KEY, JSON.stringify(readAdminProducts().filter((p) => p.id !== id))) } catch { /* ignore */ }
+  try { window.dispatchEvent(new Event('aurave:products-changed')) } catch { /* ignore */ }
+}

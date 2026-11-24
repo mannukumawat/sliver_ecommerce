@@ -7,10 +7,7 @@ import ProductImage from '../../components/ProductImage/ProductImage'
 import Reveal from '../../components/Reveal/Reveal'
 import Carousel from './Carousel'
 import { categories } from '../../data/categories'
-import { products } from '../../data/products'
-
-const newArrivals = products.filter((p) => p.isNew).slice(0, 4)
-const bestsellers = products.filter((p) => p.bestseller).slice(0, 8)
+import { useProducts } from '../../hooks/useProducts'
 
 export function TrustStrip() {
   const items = [
@@ -49,6 +46,8 @@ export function Categories() {
 }
 
 export function NewArrivals() {
+  const { products } = useProducts()
+  const newArrivals = products.filter((p) => p.isNew).slice(0, 4)
   return (
     <section className="section section--tint" aria-labelledby="new-title">
       <div className="container">
@@ -63,6 +62,8 @@ export function NewArrivals() {
 }
 
 export function Bestsellers() {
+  const { products } = useProducts()
+  const bestsellers = products.filter((p) => p.bestseller).slice(0, 8)
   return (
     <section className="section" aria-labelledby="best-title">
       <div className="container">

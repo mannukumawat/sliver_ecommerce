@@ -11,7 +11,7 @@ import './CartDrawer.css'
 
 export default function CartDrawer() {
   const { cartOpen, closeCart } = useUI()
-  const { items, subtotal, setQty, remove, clear, count } = useCart()
+  const { items, subtotal, setQty, remove, count } = useCart()
   const left = Math.max(0, FREE_SHIPPING_AT - subtotal)
   const pct = Math.min(100, (subtotal / FREE_SHIPPING_AT) * 100)
 
@@ -49,8 +49,9 @@ export default function CartDrawer() {
           </ul>
           <div className="cart__foot">
             <p className="cart__sub"><span>Subtotal</span><strong>{inr(subtotal)}</strong></p>
-            <p className="cart__note">Frontend demo. Checkout is not connected.</p>
-            <Button block size="lg" onClick={() => { clear(); closeCart() }}>Demo checkout</Button>
+            <p className="cart__note">Demo checkout — no payment is taken.</p>
+            <Button block size="lg" to="/checkout" onClick={closeCart}>Checkout</Button>
+            <p className="cart__note"><Link to="/cart" onClick={closeCart} className="link-arrow">View full bag</Link></p>
           </div>
         </>
       )}

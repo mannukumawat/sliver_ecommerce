@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { products } from '../data/products'
+import { useProducts } from './useProducts'
 import { priceRanges } from '../data/categories'
 
 export const SORTS = [
@@ -23,6 +23,7 @@ const SORT_FN = {
 // Filter + sort state lives in the URL so views are shareable and the back button works.
 export function useCollectionFilters() {
   const [sp, setSp] = useSearchParams()
+  const { products } = useProducts()
 
   const filters = useMemo(() => ({
     category: list(sp, 'category'),
@@ -58,7 +59,7 @@ export function useCollectionFilters() {
       .filter((p) => !filters.colour.length || filters.colour.includes(p.colour))
       .filter((p) => !filters.onlyNew || p.isNew)
       .sort(SORT_FN[sort])
-  }, [filters, sort])
+  }, [filters, sort, products])
 
   return { filters, sort, results, activeCount, toggle, setOnlyNew, setSort, clear }
 }
